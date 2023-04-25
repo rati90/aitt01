@@ -9,19 +9,17 @@ on:
 jobs:
 
   build-and-publish-latest:
-    
     runs-on: ubuntu-latest
-    
     steps:
-        - uses: actions/checkout@v2 # Checking out the repo
-        - name: Login to github container registry
-          uses: docker/login-action@v1
-	  with:
-            registry: ghcr.io
-            username: ${{ github.actor }}
-            password: ${{ secrets.GHSECTOK }}
+      - uses: actions/checkout@v2 # Checking out the repo
+      - name: Login to github container registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GHSECTOK }}
         
-        - name: Build and Push docker image
-            run: |
-              docker build ./ --tag ghcr.io/flasker:latest
-              docker push ghcr.io/flasker:latest
+      - name: Build and Push docker image
+          run: |
+            docker build ./ --tag ghcr.io/flasker:latest
+            docker push ghcr.io/flasker:latest
