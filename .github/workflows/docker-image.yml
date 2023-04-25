@@ -20,6 +20,6 @@ jobs:
           password: ${{ secrets.GHSECTOK }}
         
       - name: Build and Push docker image
-          run: |
-            docker build ./ --tag ghcr.io/flasker:latest
-            docker push ghcr.io/flasker:latest
+        run: |
+          docker build ./ --tag ghcr.io/flasker:latest
+          docker push ghcr.io/flasker:latest
