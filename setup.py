@@ -19,5 +19,5 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     options = {"bdist_wheel": {"universal":True}},
-    python_requires='>=3.7',
+    python_requires='>=3.8',
 )
